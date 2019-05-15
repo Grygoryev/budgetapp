@@ -1,0 +1,42 @@
+doctype html
+head
+  link(rel="stylesheet" href="css/main.css")
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+  meta(http-equiv='x-ua-compatible', content='ie=edge')
+
+body.page
+  //include ./components/header
+
+  main.page__main
+    section.app.box
+      .app__title Словарь ваших слов
+      .app__container.box__container
+        form.enter-word
+          .enter-word__word-original
+            select(name='wordArticle').enter-word__article
+              option(selected value='der') der
+              option(value='die') die
+              option(value='das') das
+            input(type="text" name="wordOriginal" placeholder="das Wort").enter-word__word
+            input(type="text" placeholder="plural Form, z.B. -e ").enter-word__plural-form
+          .enter-word__word-translation
+            input(type="text" placeholder="перевод").enter-word__translation
+          .enter-word__add-button.js-add-word-btn
+        .words-list
+          .word
+            //.word__original
+            .word__article.word__item das
+            .word__original-form.word__item Madchen
+            .word__plural-form.word__item -
+            //.word__translation
+            .word__translated-form.word__item Девушка
+
+
+
+
+
+  include ./components/footer 
+
+  include ./assets/icons
+  script(src="js/index.js")

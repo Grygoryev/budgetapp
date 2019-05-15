@@ -1,0 +1,106 @@
+.app {
+  padding: 70px 0;
+
+  &__container {
+    max-width: 920px;
+  }
+
+  &__title {
+    @include font(32px);
+
+    color: #684a80;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  input, select {
+
+    color: rgba(#000, 0.65);
+    min-height: 45px;
+    font-size: 18px;
+    flex-shrink: 1;
+
+  }
+
+  input {
+    padding: 5px;
+  }
+}
+
+.enter-word {
+  @include flex(flex-start, flex-start, row nowrap);
+
+  position: relative;
+  margin-bottom: 50px;
+  padding-right: 70px;
+
+  &__word-original {
+    margin-right: 10px;
+  }
+
+  &__add-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: $color-white;
+    background-image: radial-gradient(white, rgba($color-black, 0.34));
+    border: 1px solid rgba($color-black, 0.5);
+    border-radius: 50%;
+    transition: 300ms all;
+    cursor: pointer;
+
+    &:hover {
+      background-image: radial-gradient(white, rgba($color-black, 0.54));
+
+      &::after {
+        border-color: #53bd32;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 15px;
+      height: 10px;
+      border: 2px solid #3f804f;
+      border-bottom: none;
+      border-left: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: 300ms border;
+      transform: translateY(-50%) translateX(-50%) rotate(-225deg);
+    }
+  }
+}
+
+.words-list {
+
+}
+
+.word {
+  @include flex(flex-start, center);
+
+  margin-bottom: 10px;
+  width: 100%;
+
+  padding: 10px 5px;
+
+  &__original {
+    @include flex(flex-start, center);
+  }
+
+  &__item {
+    background-color: rgba($color-white, .69);
+    padding: 10px 25px;
+    margin-right: 2px;
+
+    &:hover {
+      background-color: rgba($color-white, .8);
+    }
+  }
+
+}

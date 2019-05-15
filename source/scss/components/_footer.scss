@@ -1,0 +1,149 @@
+.footer {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-color: $color-footer-dark;
+
+  @include respond-min($tablet) {
+    padding-top: 75px;
+  }
+
+  @include  respond-min($xl-desktop) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    max-width: none;
+  }
+
+  &__container {
+    @include respond-min($tablet) {
+      @include flex(space-between, stretch, row wrap);
+
+      padding-right: 60px;
+    }
+
+    @include respond-min($sm-desktop) {
+      padding-left: 100px;
+    }
+  }
+
+  &__logo {
+    margin: 0 auto 37px;
+    display: block;
+    max-width: 75px;
+    width: 100%;
+
+    @include respond-min($tablet) {
+      display: none;
+    }
+  }
+
+  &__social-media {
+    @include respond-min($tablet) {
+      order: 2;
+    }
+  }
+
+  &__links {
+    @include flex(space-between, flex-start);
+
+    margin-bottom: 26px;
+
+    @include respond-min($tablet) {
+      flex-grow: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__links-section {
+    @include flex(flex-start, flex-start, column nowrap);
+
+    width: 50%;
+  }
+
+  &__links-section-title {
+    @include font(16px, $fw-medium, 1);
+
+    color: $color-white;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    @include font(15px, $fw-light, 1);
+
+    color: $footer-text;
+    margin-bottom: 15px;
+    transition: .3s all;
+
+    @include respond-min($desktop) {
+      margin-bottom: 23px;
+    }
+
+    &:hover {
+      color: $color-white;
+
+      .social-icon {
+        fill: currentColor;
+      }
+
+      .social-links__item-text {
+        color: currentColor;
+      }
+    }
+  }
+
+  &__copyright {
+    max-width: 960px;
+    margin: 0 auto;
+
+    @include respond-min($tablet) {
+      position: relative;
+      top: -25px;
+      max-width: 768px;
+    }
+
+    @include respond-min($sm-desktop) {
+      top: -5px;
+      padding-left: 100px;
+    }
+
+    @include respond-min($desktop) {
+      padding-left: 110px;
+      max-width: 1216px;
+    }
+  }
+
+  &__copyright-year,
+  &__copyright-firm-name {
+    @include font(12px, $fw-light, 17px);
+
+    color: rgba($footer-text, 0.5);
+    text-align: center;
+
+    @include respond-min($tablet) {
+      text-align: left;
+    }
+
+    @include respond-min($desktop) {
+      font-size: 13px;
+    }
+  }
+
+  .icon-facebook {
+    width: 10px;
+    height: 20px;
+  }
+
+  .icon-twitter {
+    width: 23px;
+    height: 20px;
+  }
+
+  .icon-instagram {
+    width: 21px;
+    height: 21px;
+  }
+
+  .icon-youtube {
+    width: 23px;
+    height: 18px;
+  }
+}

@@ -1,0 +1,32 @@
+$fontsPath: "../assets/fonts/";
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url("#{$fontsPath}GothaProLig.eot?") format('eot'), url("#{$fontsPath}GothaProLig.woff") format('woff'), url("#{$fontsPath}GothaProLig.ttf") format('ttf'), url("#{$fontsPath}GothaProLig.svg") format('svg');
+	font-weight: $fw-light;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url("#{$fontsPath}GothaProReg.eot?") format('eot'), url("#{$fontsPath}GothaProReg.woff") format('woff'), url("#{$fontsPath}GothaProReg.ttf") format('ttf'), url("#{$fontsPath}GothaProReg.svg") format('svg');
+	font-weight: $fw-normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url("#{$fontsPath}GothaProMed.eot?") format('eot'), url("#{$fontsPath}GothaProMed.woff") format('woff'), url("#{$fontsPath}GothaProMed.ttf") format('ttf'), url("#{$fontsPath}GothaProMed.svg") format('svg');
+	font-weight: $fw-medium;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url("#{$fontsPath}GothaProBol.eot?") format('eot'), url("#{$fontsPath}GothaProBol.woff") format('woff'), url("#{$fontsPath}GothaProBol.ttf") format('ttf'), url("#{$fontsPath}GothaProBol.svg") format('svg');
+	font-weight: $fw-bold;
+	font-style: normal;
+}
+
+$font-family: 'GothamPro', 'Arial', sans-serif;
+$font: $fw-normal 16px/19px $font-family;

@@ -1,0 +1,64 @@
+.intro {
+  background-image: url('#{$imgPath}laptop.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 30%;
+
+  @include respond-min($bg-tablet) {
+    background-image: url('#{$imgPath}mac_desktop.png');
+    background-position-y: 150%;
+
+  }
+
+  &__container {
+    padding-top: 214px;
+    padding-left: 38px;
+    padding-right: 38px;
+
+    @include flex(flex-start, center, column nowrap);
+  }
+
+  &__title {
+    @include font(32px, $fw-bold, 40px);
+
+    color: $color-white;
+    margin-bottom: 36px;
+
+    @include respond-min($tablet) {
+      @include font(40px, $fw-bold, 52px);
+
+      text-align: center;
+      order: 1;
+      margin-bottom: 25px;
+    }
+
+    @include respond-min($desktop) {
+      @include font(64px, $fw-bold, 72px);
+    }
+  }
+
+  &__subtitle {
+    color: $color-white;
+    max-width: 244px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    @include respond-min($tablet) {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: $fw-bold;
+      order: 2;
+      max-width: none;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 16px;
+
+    @include respond-min($tablet) {
+      order: 3;
+    }
+  }
+}

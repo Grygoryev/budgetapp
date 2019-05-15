@@ -1,0 +1,81 @@
+.advantages {
+
+  @include respond-min($tablet) {
+    margin-bottom: 0;
+  }
+
+  @include respond-min($desktop) {
+    margin-bottom: 5px;
+  }
+
+  &__list {
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    @include respond-min($tablet) {
+      @include flex(space-between, stretch);
+
+      background-color: $color-black;
+      padding: 0;
+    }
+  }
+}
+
+.advantage {
+  @include flex(space-between, center);
+
+  margin-bottom: 25px;
+  padding: 15px 0;
+
+  @include respond-min($tablet) {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; 
+    border-radius: 10px;
+    margin-right: 15px;
+    background-color: #212529;
+    width: 33.3%;
+    margin-bottom: 15px;
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+
+  @include respond-min($desktop) {
+    align-items: flex-start;
+    max-width: 384px;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  &__title {
+    @include font(16px, $fw-bold, 24px);
+
+    color: $color-white;
+    max-width: 200px;
+
+    @include respond-min($tablet) {
+      @include font(20px, $fw-bold, 28px);
+
+      order: 2;
+      text-align: center;
+    }
+
+    @include respond-min($desktop) {
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    color: #9299A2;
+    max-height: 58px;
+    max-width: 70px;
+
+    @include respond-min($tablet) {
+      order: 1;
+      margin-bottom: 50px;
+    }
+  }
+}

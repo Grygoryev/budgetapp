@@ -1,0 +1,122 @@
+@mixin truncateText($overflow: ellipsis, $max-width: 320px) {
+  display: inline-block;
+  overflow: hidden;
+  max-width: $max-width;
+  text-overflow: $overflow;
+  white-space: nowrap;
+}
+// Centered  @include center(both);
+@mixin center($position) {
+  @if $position == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @else if $position == 'horizontal' {
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  position: absolute;
+}
+/* mixin for retina background images */
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+    & {
+      @if $height == none {
+        background-size: $width;
+      }
+      @else {
+        background-size: $width $height;
+      }
+      background-image: url($file + '@2x.' + $type);
+    }
+  }
+}
+// Example
+#foo {
+  @include background-image-retina( 'foobar', 'png', 10px, 20px);
+  background: repeat;
+}
+@mixin ico-center($file, $padding-left, $background-position, $with, $height, $type) {
+  padding-left: $padding-left;
+  background-image: url("../img/" + $file + "." + $type);
+  background-position: $background-position center;
+  background-size: $with $height;
+  background-repeat: no-repeat;
+}
+@mixin triangle($size, $color, $direction) {
+  @if $direction == up{
+    border-bottom-color: $color;
+  }
+  @else if $direction == right {
+    border-left-color: $color;
+  }
+  @else if $direction == down {
+    border-top-color: $color;
+  }
+  @else if $direction == left {
+    border-right-color: $color;
+  }
+  width: 0;
+  height: 0;
+  border-width: $size / 2;
+  border-style: solid;
+  border-color: transparent;
+}
+// Using @include triangle($size, $color, $direction);
+
+@mixin respond-max($screen-width) {
+  @media (max-width: $screen-width) {
+    @content
+  }
+}
+
+@mixin respond-min($screen-width) {
+  @media (min-width: $screen-width) {
+    @content
+  }
+}
+
+@mixin flex($jc: flex-start, $ai: flex-start, $ff: row nowrap) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-flow: $ff;
+}
+
+@mixin font($fs, $fw: $fw-normal, $lh: 1, $ff: $font-family) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  font-family: $ff;
+}
+
+@mixin fluidFont(
+  $f-size-min,
+  $f-size-max,
+  $fweight: $fw-normal,
+  $lheight: 1,
+  $screen-min: $mobile,
+  $screen-max: $desktop,
+  $ffamily: $font-family
+) {
+  font-size: calcFluidFontSize($f-size-min, $f-size-max, $screen-min, $screen-max, px);
+  line-height: $lheight;
+  font-weight: $fweight;
+  font-family: $ffamily;
+
+  @media (min-width: $screen-max) {
+    font-size: $f-size-max + px;
+  }
+
+  @media(max-width: $screen-min) {
+    font-size: $f-size-min + px;
+  }
+}

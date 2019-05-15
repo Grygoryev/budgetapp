@@ -1,0 +1,19 @@
+.btn {
+  @include font(12px, $fw-bold, 1);
+  @include flex(center, center);
+
+  text-transform: uppercase;
+  background-color: #0D6FFB;
+  color: $color-white;
+  min-height: 48px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+
+  @include respond-min($tablet) {
+    width: auto;
+    padding: 0 30px;
+    max-width: 280px;
+  }
+}

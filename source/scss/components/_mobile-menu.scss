@@ -1,0 +1,92 @@
+.mobile-menu {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  background-color: $color-footer-dark;
+  width: 100%;
+  transition: 300ms all;
+  height: 100vh;
+  z-index: 10;
+  opacity: 0;
+  padding: 20px 30px;
+
+  /*modifiers*/
+  &_open {
+    left: 0;
+    opacity: 1;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+  }
+
+  &__main {
+    @include flex(flex-start, flex-start, column nowrap);
+  }
+
+  &__link {
+    @include font(13px, $fw-bold, 1);
+
+    color: $color-white;
+    text-transform: uppercase;
+    padding: 15px 0;
+    cursor: pointer;
+  }
+
+  &__close-btn {
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 2px;
+      width: 14px;
+      background-color: $color-white;
+
+      &:first-child {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.mobile-menu-btn {
+  @include flex(space-between, flex-start, column nowrap);
+
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 16px;
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: $color-white;
+    transition: 300ms all;
+
+    &:nth-child(3) {
+      width: 80%;
+    }
+  }
+
+  &:hover {
+
+    span {
+      &:nth-child(2) {
+        width: 80%;
+      }
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+  }
+}

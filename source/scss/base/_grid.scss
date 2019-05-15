@@ -1,0 +1,30 @@
+.box { 
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto 50px;
+
+  &__container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include respond-min($tablet) {
+      padding-left: 35px;
+      padding-right: 30px;
+      max-width: 1200px;
+    }
+
+    @include respond-min($desktop) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.main {
+  @include respond-max($desktop) {
+    overflow-x: hidden;
+  }
+}

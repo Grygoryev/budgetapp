@@ -1,0 +1,52 @@
+html {
+  height: 100%;
+}
+
+body, p, ul, li {
+  margin: 0;
+  padding: 0
+}
+
+.page {
+ background-color: $color-bg;
+}
+
+.body-site {
+  overflow-x: hidden;
+  min-width: 320px;
+  height: 100%;
+
+  &_popup-open {
+    overflow: initial;
+  }
+}
+
+*,
+button {
+  box-sizing: border-box;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: $fw-bold;
+
+  &.lighter {
+    font-weight: $fw-medium;
+  }
+}
+
+b {
+  font-weight: $fw-bold;
+}
+
+i {
+  font-style: italic;
+}

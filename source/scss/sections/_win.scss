@@ -1,0 +1,74 @@
+.win {
+
+  @include respond-min($tablet) {
+
+  }
+
+  &__container {
+
+  }
+
+  &__header {
+    @include respond-min($tablet) {
+      @include flex(space-between, flex-start);
+    }
+  }
+
+  &__wafer {
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 40px 20px 30px;
+    background-image: url('#{$imgPath}bmw_mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    padding-bottom: 200px;
+
+    @include respond-min($tablet) {
+      padding: 70px 40px 300px;
+      background-image: url('#{$imgPath}bmw_tablet.svg');
+    }
+
+    @include respond-min($bg-tablet) {
+      background-image: url('#{$imgPath}bmw_desktop.svg');
+    }
+  }
+
+  &__title {
+    @include font(24px, $fw-bold, 36px);
+
+    margin-bottom: 15px;
+    color: $color-white;
+
+    @include respond-min($tablet) {
+      @include font(32px, $fw-bold, 40px);
+
+      max-width: 264px;
+      width: 100%;
+      flex-grow: 1;
+      flex-shrink: 0;
+      margin-right: 30px;
+    }
+  }
+
+  &__description {
+    @include font(16px, $fw-normal, 24px);
+
+    color: #9299A2;
+    margin-bottom: 25px;
+
+    @include respond-min($tablet) {
+      @include font(20px, $fw-bold, 28px);
+
+      flex-grow: 0;
+    }
+  }
+
+  &__btn {
+
+    @include respond-min($tablet) {
+      margin-left: 0;
+      max-width: 220px;
+    }
+  }
+}
